@@ -4,56 +4,99 @@ import { shopData } from '../data';
 
 const Offers: React.FC = () => {
   return (
-    <section id="offers" style={{ padding: '80px 0' }}>
+    <section id="offers" style={{ padding: '120px 0', background: 'var(--cream)' }}>
       <div className="container">
         <motion.div 
-          className="glass-panel"
-          initial={{ scale: 0.9, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
+          transition={{ duration: 1 }}
           style={{ 
-            padding: 'clamp(2rem, 5vw, 4rem)', 
+            padding: 'clamp(3rem, 10vw, 6rem)', 
             textAlign: 'center', 
-            borderRadius: '24px',
-            background: 'linear-gradient(135deg, rgba(128,0,32,0.95) 0%, rgba(74,0,18,1) 100%)',
+            borderRadius: '4px',
+            background: 'var(--maroon-dark)',
             border: '2px solid var(--gold)',
             color: 'var(--cream)',
             position: 'relative', 
             overflow: 'hidden',
-            boxShadow: '0 20px 50px rgba(0,0,0,0.3)'
+            boxShadow: '0 25px 60px rgba(0,0,0,0.3)'
           }}
         >
-          {/* Confetti / Sparkle Decor */}
-          <div className="sparkle" style={{ top: '10%', left: '10%' }}>✨</div>
-          <div className="sparkle" style={{ bottom: '10%', right: '15%' }}>✨</div>
-          <div className="sparkle" style={{ top: '20%', right: '10%' }}>✨</div>
+          {/* Animated Background Pattern */}
+          <div style={{ 
+            position: 'absolute', inset: 0, opacity: 0.05,
+            backgroundImage: 'url("https://www.transparenttextures.com/patterns/black-paper.png")'
+          }} />
+          
+          <motion.div 
+            animate={{ 
+              rotate: [0, 360],
+              opacity: [0.1, 0.2, 0.1]
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            style={{ 
+              position: 'absolute', top: '-50%', left: '-50%', width: '200%', height: '200%',
+              border: '1px solid var(--gold)', borderRadius: '40%', opacity: 0.1
+            }} 
+          />
 
-          <motion.h2 
-            initial={{ y: -20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
+          <motion.h4 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            style={{ fontSize: 'clamp(1.8rem, 6vw, 3.5rem)', color: 'var(--gold)', marginBottom: '1rem' }}
+            style={{ color: 'var(--gold)', letterSpacing: '6px', marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '1rem' }}
+          >
+            Limited Time Privilege
+          </motion.h4>
+          
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, type: 'spring' }}
+            style={{ 
+              fontSize: 'clamp(2.5rem, 12vw, 5.5rem)', 
+              color: 'white', 
+              marginBottom: '1rem',
+              fontFamily: 'var(--font-heading)',
+              textTransform: 'uppercase',
+              fontWeight: 900,
+              lineHeight: 1
+            }}
           >
             {shopData.offers.title}
           </motion.h2>
-          
+
           <motion.div 
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ type: 'spring', damping: 10, delay: 0.5 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8 }}
             style={{ 
-              fontSize: 'clamp(3rem, 15vw, 6rem)', 
-              fontWeight: 800, 
+              fontSize: 'clamp(3rem, 15vw, 7rem)', 
+              fontWeight: 900, 
               margin: '1rem 0', 
-              color: 'white', 
-              textShadow: '0 0 30px rgba(212, 175, 55, 0.6)',
-              lineHeight: 1
+              color: 'var(--gold)', 
+              textShadow: '0 0 30px rgba(197, 160, 89, 0.5)',
+              lineHeight: 1,
+              fontFamily: 'var(--font-heading)'
             }}
           >
             {shopData.offers.discount}
           </motion.div>
           
-          <p style={{ fontSize: 'clamp(1rem, 3vw, 1.2rem)', opacity: 0.9, marginBottom: '2.5rem', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
+          <p style={{ 
+            fontSize: 'clamp(1.1rem, 3vw, 1.4rem)', 
+            opacity: 0.8, 
+            marginBottom: '4rem', 
+            maxWidth: '750px', 
+            margin: '0 auto 4rem',
+            lineHeight: 1.6,
+            fontWeight: 300,
+            letterSpacing: '1px'
+          }}>
             {shopData.offers.subtitle}
           </p>
           
@@ -61,56 +104,50 @@ const Offers: React.FC = () => {
             className="timer-container"
             style={{ 
               display: 'inline-flex', 
-              gap: 'clamp(1rem, 3vw, 2rem)', 
-              background: 'rgba(255,255,255,0.1)', 
-              padding: '1.5rem 2rem', 
-              borderRadius: '16px', 
-              border: '1px solid rgba(255,255,255,0.2)',
+              gap: 'clamp(1rem, 4vw, 3rem)', 
+              background: 'rgba(197, 160, 89, 0.1)', 
+              padding: '2.5rem 3.5rem', 
+              borderRadius: '2px', 
+              border: '1px solid var(--gold)',
               flexWrap: 'wrap',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              backdropFilter: 'blur(10px)'
             }}
           >
-            <div className="timer-item">
-              <div style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)', fontWeight: 700, color: 'var(--gold)' }}>02</div>
-              <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', opacity: 0.8 }}>Days</div>
-            </div>
-            <div className="timer-separator" style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--gold)', alignSelf: 'center' }}>:</div>
-            <div className="timer-item">
-              <div style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)', fontWeight: 700, color: 'var(--gold)' }}>14</div>
-              <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', opacity: 0.8 }}>Hours</div>
-            </div>
-            <div className="timer-separator" style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--gold)', alignSelf: 'center' }}>:</div>
-            <div className="timer-item">
-              <div style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)', fontWeight: 700, color: 'var(--gold)' }}>35</div>
-              <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', opacity: 0.8 }}>Mins</div>
-            </div>
+            {['Days', 'Hours', 'Mins'].map((unit, i) => (
+              <React.Fragment key={unit}>
+                <div className="timer-item">
+                  <div style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 700, color: 'white', lineHeight: 1 }}>
+                    {i === 0 ? '02' : i === 1 ? '14' : '35'}
+                  </div>
+                  <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '2px', marginTop: '0.8rem', color: 'var(--gold)' }}>{unit}</div>
+                </div>
+                {i < 2 && (
+                  <div className="timer-separator" style={{ fontSize: '2.5rem', fontWeight: 300, color: 'var(--gold)', alignSelf: 'center', opacity: 0.5 }}>:</div>
+                )}
+              </React.Fragment>
+            ))}
           </div>
 
           <motion.button 
             className="btn-royal"
             style={{ 
-              marginTop: '3.5rem', 
-              background: 'var(--gold)', 
-              color: 'var(--maroon)', 
-              border: 'none', 
+              marginTop: '5rem', 
+              padding: '1.2rem 4rem',
               display: 'block', 
-              margin: '3.5rem auto 0',
-              padding: '1rem 3rem'
+              margin: '5rem auto 0'
             }}
-            whileHover={{ scale: 1.05, boxShadow: '0 0 20px var(--gold)' }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Claim Offer Now
+            Claim Exclusive Offer
           </motion.button>
         </motion.div>
       </div>
       <style>{`
-        .sparkle { position: absolute; font-size: 2rem; animation: sparklePulse 3s infinite; pointer-events: none; }
-        @keyframes sparklePulse { 0%, 100% { opacity: 0.3; transform: scale(0.8) rotate(0deg); } 50% { opacity: 1; transform: scale(1.2) rotate(20deg); } }
-        
-        @media (max-width: 480px) {
-          .timer-separator { display: none; }
-          .timer-container { gap: 1.5rem; width: 100%; }
+        @media (max-width: 576px) {
+          .timer-separator { display: none !important; }
+          .timer-container { gap: 2rem !important; width: 100%; padding: 2rem !important; }
           .timer-item { flex: 1; min-width: 60px; }
         }
       `}</style>

@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import AboutSection from './components/AboutSection';
+import StatsSection from './components/StatsSection';
 import WeddingCollection from './components/WeddingCollection';
 import Offers from './components/Offers';
+import ReviewsSection from './components/ReviewsSection';
+import FAQSection from './components/FAQSection';
 import Gallery from './components/Gallery';
 import ShopDetails from './components/ShopDetails';
 import Footer from './components/Footer';
@@ -25,9 +29,13 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <AboutSection />
+        <StatsSection />
         <WeddingCollection />
         <Offers />
         <Gallery />
+        <ReviewsSection />
+        <FAQSection />
         <ShopDetails />
       </main>
       <Footer />

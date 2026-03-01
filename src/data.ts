@@ -10,71 +10,102 @@ export interface Product {
   link: string;
 }
 
-export interface SocialLink {
-  platform: string;
-  url: string;
-}
-
 export const shopData = {
   name: "Bhumika Garments",
   proprietor: "Bapu Mahajan",
-  tagline: "Your Family's Favorite Fashion Hub",
+  tagline: "Where Tradition Meets Modern Elegance",
   phone: "9975345692",
-  address: "Minatai Complex, Parola, Dist. Jalgaon",
+  address: "Minatai Complex, Near Bus Stand, Parola, Dist. Jalgaon",
   email: "contact@bhumikagarments.com",
+  openingHours: "10:00 AM - 9:00 PM (All Days)",
+  
+  about: {
+    title: "Over 15 Years of Excellence",
+    description: "Bhumika Garments has been a cornerstone of fashion in Parola for over a decade. We specialize in providing high-quality, trendy, and affordable clothing for the entire family. From traditional festive wear to modern casuals, we curate our collection with love and care.",
+    features: [
+      { title: "Premium Quality", icon: "💎", desc: "Handpicked fabrics that ensure comfort and durability." },
+      { title: "Latest Trends", icon: "✨", desc: "Stay ahead with our weekly updated fashion collections." },
+      { title: "Best Prices", icon: "🏷️", desc: "Unmatched value with competitive pricing in the market." },
+      { title: "Family Shop", icon: "👨‍👩‍👧‍👦", desc: "One-stop destination for Kids, Mens, and Ladies wear." }
+    ]
+  },
+
+  stats: [
+    { label: "Happy Families", value: "15,000+" },
+    { label: "Years of Trust", value: "15+" },
+    { label: "Daily Designs", value: "50+" },
+    { label: "Quality Checks", value: "100%" }
+  ],
+
   collection: [
     {
       id: 1,
-      title: "Kids Party Wear Set",
+      title: "Kids Festive Sherwani",
       category: "Kids",
-      price: "₹799",
+      price: "₹1,299",
       image: "https://images.unsplash.com/photo-1519457431-7571f018274b?auto=format&fit=crop&q=80&w=800",
-      badge: "Pure Cotton"
+      badge: "Festive Special"
     },
     {
       id: 2,
-      title: "Mens Premium Cotton Shirt",
+      title: "Mens Premium Tuxedo",
       category: "Mens",
-      price: "₹1,299",
-      image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80&w=800",
-      badge: "New Arrival"
+      price: "₹4,499",
+      image: "https://images.unsplash.com/photo-1594932224491-99630e05aa6a?auto=format&fit=crop&q=80&w=800",
+      badge: "Royal Collection"
     },
     {
       id: 3,
-      title: "Ladies Trending Saree",
+      title: "Ladies Silk Banarasi",
       category: "Ladies",
-      price: "₹2,499",
+      price: "₹3,999",
       image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=800",
-      badge: "Trending"
+      badge: "Handcrafted"
     },
     {
       id: 4,
-      title: "Kids Denim Dungaree",
+      title: "Kids Designer Frock",
       category: "Kids",
-      price: "₹999",
-      image: "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&q=80&w=800"
+      price: "₹899",
+      image: "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&q=80&w=800",
+      badge: "Soft Fabric"
     },
     {
       id: 5,
-      title: "Mens Slim Fit Jeans",
+      title: "Mens Slim Fit Blazer",
       category: "Mens",
-      price: "₹1,899",
-      image: "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&q=80&w=800"
+      price: "₹2,899",
+      image: "https://images.unsplash.com/photo-1507679799987-c7377ec486b6?auto=format&fit=crop&q=80&w=800"
     },
     {
       id: 6,
-      title: "Ladies Designer Gown",
+      title: "Ladies Evening Gown",
       category: "Ladies",
       price: "₹3,200",
-      image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&q=80&w=800"
+      image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&q=80&w=800",
+      badge: "Designer Wear"
     }
   ],
+
   offers: {
-    title: "Seasonal Celebration",
-    discount: "Flat 25% OFF",
-    subtitle: "Exclusive deals on Kids, Mens, and Ladies Wear.",
+    title: "Wedding Season Sale",
+    discount: "Flat 30% OFF",
+    subtitle: "On all Wedding Collections and Premium Festive Wear. Limited time offer!",
     endsIn: "2 Days"
   },
+
+  reviews: [
+    { name: "Rahul Patil", rating: 5, text: "Best shop in Parola! The quality of clothes is amazing and very affordable." },
+    { name: "Sneha Mahajan", rating: 5, text: "Love the kids' collection. Very soft fabric and beautiful designs." },
+    { name: "Vikram Singh", rating: 4, text: "Great variety for men. Found a perfect tuxedo for my brother's wedding." }
+  ],
+
+  faq: [
+    { q: "Do you offer alterations?", a: "Yes, we provide free minor alterations for all clothes purchased from our shop." },
+    { q: "What are your payment options?", a: "We accept Cash, UPI (GPay/PhonePe), and all major Credit/Debit cards." },
+    { q: "Is parking available?", a: "Yes, we have dedicated parking space for our customers in the complex." }
+  ],
+
   gallery: [
     "https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?auto=format&fit=crop&q=80&w=800",
     "https://images.unsplash.com/photo-1621335829175-95f437384d7c?auto=format&fit=crop&q=80&w=800",
@@ -89,32 +120,3 @@ export const shopData = {
     { platform: "WhatsApp", url: "https://wa.me/919975345692" }
   ]
 };
-
-// Keeping portfolioData for compatibility with old components
-export const portfolioData = {
-  name: "Bhumika Garments",
-  brand: "frontendlalit",
-  title: "Premium Fashion Hub",
-  tagline: "Quality Wear for Kids, Mens & Ladies",
-  about: "Located in Minatai Complex, Parola, we provide the best collection of trending apparel.",
-  email: "contact@bhumikagarments.com",
-  stats: [
-    { label: "Happy Customers", value: "5000+" },
-    { label: "New Arrivals", value: "100+" },
-    { label: "Experience", value: "10+ Yrs" },
-    { label: "Quality", value: "100%" }
-  ],
-  process: [
-    { step: "01", title: "Select", desc: "Choose your favorite style." }
-  ],
-  techStack: [
-    { name: "Quality", icon: "✨" }
-  ],
-  services: [],
-  socials: shopData.socials,
-  projects: [
-    { id: 1, title: "Sample", description: "Sample", tags: [], link: "#", image: "", category: "Kids" as const, price: "" }
-  ]
-};
-
-export interface Project extends Product {}
