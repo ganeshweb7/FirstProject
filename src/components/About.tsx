@@ -45,7 +45,7 @@ const About: React.FC = () => {
 
             {/* Stats Grid */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-              {portfolioData.stats.map((stat, idx) => (
+              {portfolioData.stats.map((stat: { value: string, label: string }, idx: number) => (
                 <motion.div 
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}

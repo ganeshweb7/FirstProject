@@ -10,6 +10,9 @@ export interface Product {
   link: string;
 }
 
+// Alias Project to Product for backward compatibility
+export interface Project extends Product {}
+
 export const shopData = {
   name: "Bhumika Garments",
   proprietor: "Bapu Mahajan",
@@ -44,7 +47,10 @@ export const shopData = {
       category: "Kids",
       price: "₹1,299",
       image: "https://images.unsplash.com/photo-1519457431-7571f018274b?auto=format&fit=crop&q=80&w=800",
-      badge: "Festive Special"
+      badge: "Festive Special",
+      tags: ["Cotton", "Ethnic"],
+      description: "Elegant sherwani for kids.",
+      link: "#"
     },
     {
       id: 2,
@@ -52,7 +58,10 @@ export const shopData = {
       category: "Mens",
       price: "₹4,499",
       image: "https://images.unsplash.com/photo-1594932224491-99630e05aa6a?auto=format&fit=crop&q=80&w=800",
-      badge: "Royal Collection"
+      badge: "Royal Collection",
+      tags: ["Premium", "Formal"],
+      description: "Classic tuxedo for men.",
+      link: "#"
     },
     {
       id: 3,
@@ -60,7 +69,10 @@ export const shopData = {
       category: "Ladies",
       price: "₹3,999",
       image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=800",
-      badge: "Handcrafted"
+      badge: "Handcrafted",
+      tags: ["Silk", "Traditional"],
+      description: "Traditional banarasi silk saree.",
+      link: "#"
     },
     {
       id: 4,
@@ -68,14 +80,20 @@ export const shopData = {
       category: "Kids",
       price: "₹899",
       image: "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&q=80&w=800",
-      badge: "Soft Fabric"
+      badge: "Soft Fabric",
+      tags: ["Casual", "Kids"],
+      description: "Comfortable designer frock.",
+      link: "#"
     },
     {
       id: 5,
       title: "Mens Slim Fit Blazer",
       category: "Mens",
       price: "₹2,899",
-      image: "https://images.unsplash.com/photo-1507679799987-c7377ec486b6?auto=format&fit=crop&q=80&w=800"
+      image: "https://images.unsplash.com/photo-1507679799987-c7377ec486b6?auto=format&fit=crop&q=80&w=800",
+      tags: ["Modern", "Slim Fit"],
+      description: "Stylish slim fit blazer.",
+      link: "#"
     },
     {
       id: 6,
@@ -83,7 +101,10 @@ export const shopData = {
       category: "Ladies",
       price: "₹3,200",
       image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&q=80&w=800",
-      badge: "Designer Wear"
+      badge: "Designer Wear",
+      tags: ["Evening", "Party"],
+      description: "Elegant evening gown.",
+      link: "#"
     }
   ],
 
@@ -119,4 +140,32 @@ export const shopData = {
     { platform: "Facebook", url: "#" },
     { platform: "WhatsApp", url: "https://wa.me/919975345692" }
   ]
+};
+
+// Exporting portfolioData for backward compatibility with existing components
+export const portfolioData = {
+  name: shopData.name,
+  brand: "Bhumika Garments",
+  title: shopData.tagline,
+  tagline: shopData.tagline,
+  about: shopData.about.description,
+  email: shopData.email,
+  stats: shopData.stats,
+  process: [
+    { step: "01", title: "Select", desc: "Choose your favorite style from our vast collection." },
+    { step: "02", title: "Try", desc: "Comfort and fit check in our trial rooms." },
+    { step: "03", title: "Perfect", desc: "Minor alterations if needed for the perfect look." }
+  ],
+  techStack: [
+    { name: "Premium Quality", icon: "💎" },
+    { name: "Trend Setter", icon: "✨" }
+  ],
+  services: shopData.about.features,
+  socials: shopData.socials,
+  projects: shopData.collection.map(p => ({
+    ...p,
+    description: p.description || "",
+    tags: p.tags || [],
+    link: p.link || "#"
+  }))
 };

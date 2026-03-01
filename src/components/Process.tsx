@@ -12,7 +12,7 @@ const Process: React.FC = () => {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
-          {portfolioData.process.map((item, idx) => (
+          {portfolioData.process.map((item: { step: string, title: string, desc: string }, idx: number) => (
             <motion.div
               key={item.step}
               className="super-card"

@@ -62,7 +62,7 @@ const ProjectsCarousel: React.FC = () => {
           msOverflowStyle: 'none'
         }}
       >
-        {portfolioData.projects.map((project, index) => (
+        {portfolioData.projects.map((project: any, index: number) => (
           <motion.div
             key={project.id}
             initial={{ opacity: 0, x: 100, rotateY: 30 }}

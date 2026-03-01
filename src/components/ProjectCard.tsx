@@ -56,7 +56,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
           transition={{ delay: 0.2 }}
         >
           <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem' }}>
-            {project.tags.slice(0,2).map(tag => (
+            {project.tags.slice(0,2).map((tag: string) => (
               <span key={tag} style={{ border: '1px solid var(--accent-cyan)', padding: '0.2rem 0.8rem', borderRadius: '20px', fontSize: '0.7rem', color: 'var(--accent-cyan)' }}>{tag}</span>
             ))}
           </div>
