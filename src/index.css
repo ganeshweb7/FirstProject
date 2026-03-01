@@ -32,6 +32,19 @@ body {
   overflow-x: hidden;
 }
 
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
   color: var(--maroon);
@@ -50,7 +63,7 @@ h1, h2, h3, h4 {
   background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-dark) 100%);
   color: var(--gold);
   border: 1px solid var(--gold);
-  padding: 1rem 2.5rem;
+  padding: 0.8rem 2rem;
   font-family: var(--font-heading);
   font-weight: 700;
   text-transform: uppercase;
@@ -60,12 +73,22 @@ h1, h2, h3, h4 {
   overflow: hidden;
   transition: var(--transition);
   box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3);
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
 }
 
 .btn-royal:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(128, 0, 32, 0.5);
   background: linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon) 100%);
+}
+
+@media (max-width: 640px) {
+  .btn-royal {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
 }
 
 /* Gold Gradient Text */
@@ -94,4 +117,16 @@ h1, h2, h3, h4 {
 /* Smooth Scroll */
 html {
   scroll-behavior: smooth;
+}
+
+/* Utility Animations */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
 }
